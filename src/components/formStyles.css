@@ -1,0 +1,297 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    width: 320px;
+  }
+}
+.savedText {
+  font-weight: 800;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.textArea {
+  height: 60px;
+  margin: 0px 0px 10px 0px;
+  width: 100%;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(226, 234, 255);
+}
+.formButton {
+  width: 80px;
+  height: 25px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 900;
+  align-self: center;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(226, 234, 255);
+  color: rgb(0, 62, 218);
+}
+
+.formButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  border: solid black 2px;
+}
+
+.formHeader {
+  margin: 10px;
+}
+.label {
+  font-weight: 500;
+  margin: 0px 0px 4px 0px;
+  font-size: 16px;
+  color: rgb(90, 90, 90);
+}
+.datesDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.text {
+  margin: 0px 0px 10px 0px;
+  width: 100%;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 25px;
+  border: none;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(226, 234, 255);
+}
+
+.date {
+  margin: 0px 0px 10px 0px;
+  width: 100px;
+  height: 25px;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(226, 234, 255);
+
+  border: none;
+}
+.experienceBox {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: fit-content;
+  border: solid rgb(218, 218, 218) 1px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.personalBox {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: fit-content;
+  border: solid rgb(218, 218, 218) 1px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.educationBox {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: fit-content;
+  border: solid rgb(218, 218, 218) 1px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: #eee;
+  color: rgb(43, 43, 43);
+}
+
+.cvContent {
+  margin: 1vh 1vh;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.target:hover .cvContent {
+  margin: 3vh 3vh;
+}
+
+.previewContainer {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  height: 21.213vh;
+  width: 15vh;
+
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.2), 3px 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+
+  font-size: 2vh;
+}
+
+.target {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  height: 21.213vh;
+  width: 15vh;
+}
+
+.target:hover {
+  height: 50.213vh;
+  width: 50vh;
+}
+
+.target:hover .previewContainer {
+  right: 0;
+  left: 0;
+  width: 50vh;
+  height: 70.71vh;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 20%;
+  font-size: 2vh;
+}
+
+.cvCardEdu {
+  display: grid;
+  grid-template-areas: "subHeading startDate endDate" "content content content";
+  grid-template-columns: 2fr 1fr 1fr;
+  height: fit-content;
+  grid-template-rows: 0.66vh 0.66vh;
+  align-items: baseline;
+
+  height: fit-content;
+  margin-bottom: 0.33vh;
+}
+
+.target:hover .cvCardEdu {
+  margin-bottom: 1vh;
+  grid-template-rows: 2vh 2vh;
+}
+
+.cvExperience {
+  margin-top: 1vh;
+}
+
+.target:hover .cvExperience {
+  margin-top: 3vh;
+}
+
+.cvCardExp {
+  display: grid;
+  grid-template-areas: "subHeading  startDate endDate" "role role role" "content content content";
+  grid-template-columns: 2fr 1fr 1fr;
+  height: fit-content;
+  grid-template-rows: 0.66vh 0.66vh 0.66vh;
+  align-items: baseline;
+
+  height: fit-content;
+  margin-bottom: 0.33vh;
+}
+
+.target:hover .cvCardExp {
+  margin-bottom: 1vh;
+  grid-template-rows: 2vh 2vh 2vh;
+}
+
+.cvSubheading {
+  font-size: 0.666vh;
+  font-weight: 900;
+  margin: 0 0;
+  text-decoration: underline;
+  grid-area: subHeading;
+}
+
+.target:hover .cvSubheading {
+  font-size: 2vh;
+}
+
+.cvTextBold {
+  font-size: 0.53vh;
+  font-weight: 600;
+  grid-area: subHeading;
+}
+
+.target:hover .cvTextBold {
+  font-size: 1.7vh;
+}
+
+.cvStart {
+  font-size: 0.5vh;
+  font-weight: 600;
+  justify-self: end;
+  grid-area: startDate;
+}
+
+.target:hover .cvStart {
+  font-size: 1.5vh;
+}
+
+.cvEnd {
+  font-size: 0.5vh;
+  font-weight: 600;
+  grid-area: endDate;
+}
+.target:hover .cvEnd {
+  font-size: 1.5vh;
+}
+
+.cvText {
+  font-size: 0.5vh;
+  grid-area: content;
+}
+.target:hover .cvText {
+  font-size: 1.5vh;
+}
+
+.cvTextRole {
+  font-size: 0.5vh;
+  font-weight: 600;
+  grid-area: role;
+}
+
+.target:hover .cvTextRole {
+  font-size: 1.5vh;
+}
+
+.cvContact {
+  font-size: 0.5vh;
+  margin-bottom: 1vh;
+}
+.target:hover .cvContact {
+  font-size: 1.5vh;
+}
+
+.cvHeading {
+  font-size: 1vh;
+  margin: 0 0;
+}
+
+.target:hover .cvHeading {
+  font-size: 3vh;
+}

@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Personal from "./components/personal";
+import EducationsHandler from "./components/educationsHandler";
+import ExperienceHandler from "./components/experienceHandler";
+import Preview from "./components/preview";
+import React, { Component } from "react";
+import "./components/formStyles.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      education: [],
+      experience: [],
+    };
+    this.updatePerson = this.updatePerson.bind(this);
+    this.updateEducation = this.updateEducation.bind(this);
+    this.updateExperience = this.updateExperience.bind(this);
+  }
+
+  updatePerson(stateName, value) {
+    this.setState((prevState) => ({
+      [stateName]: value,
+    }));
+  }
+
+  updateEducation(index, educationObj) {
+    console.log("update education");
+    let educationCopy = [...this.state.education];
+    let newEducation = educationObj;
+    educationCopy[index] = newEducation;
+    this.setState((prevState) => ({
+      education: educationCopy,
+    }));
+  }
+
+  updateExperience(index, experienceObj) {
+    console.log("update education");
+    let experienceCopy = [...this.state.experience];
+    let newExperience = experienceObj;
+    experienceCopy[index] = newExperience;
+    this.setState((prevState) => ({
+      experience: experienceCopy,
+    }));
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <Personal updateCV={this.updatePerson}></Personal>
+        <EducationsHandler
+          updateEducation={this.updateEducation}
+          cvData={this.state}
+        ></EducationsHandler>
+        <ExperienceHandler
+          updateEducation={this.updateExperience}
+          cvData={this.state}
+        ></ExperienceHandler>
+        <Preview cvData={this.state}></Preview>
+      </div>
+    );
+  }
 }
 
 export default App;
